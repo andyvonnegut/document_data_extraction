@@ -57,16 +57,20 @@ if 0 <= user_choice < len(df_functions):
         exit(1)  # Exit if no parameters are found
 
     # Convert the parameters to the required format for the API request using corrected column names
-    parameter_properties = {
-        param['GPT_Function_Parameter_Name']: {
-            "type": param['Paremeter_Type'],  # Note the corrected column name
+    parameter_properties = {}
+    for param in parameters_for_function.to_dict('records'):
+        param_def = {
+            "type": param['Paremeter_Type'],
             "description": param['Parameter_Description']
-        } for param in parameters_for_function.to_dict('records')
-    }
+        }
+        # Add enum if it exists
+        if pd.notna(param['Parameter_Enums']):
+            param_def["enum"] = eval(param['Parameter_Enums'])
+        parameter_properties[param['GPT_Function_Parameter_Name']] = param_def
 
     # Determine which parameters are required based on the new column
     required_parameters = parameters_for_function[
-        parameters_for_function['Required'] == "Yes"  # Assuming the new column is named 'Required'
+        parameters_for_function['Required'] == "Yes"
     ]['GPT_Function_Parameter_Name'].tolist()
 
 else:
