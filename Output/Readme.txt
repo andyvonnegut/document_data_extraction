@@ -1,0 +1,1 @@
+This is the folder where individual .csv files of extracted data will live.

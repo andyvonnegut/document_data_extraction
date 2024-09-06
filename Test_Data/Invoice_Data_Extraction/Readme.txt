@@ -1,0 +1,1 @@
+This is the folder where test files for Invoice Data Extraction will live.

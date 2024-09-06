@@ -1,0 +1,1 @@
+This is the folder where test files for COI Data Extraction will live.
