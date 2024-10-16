@@ -1,0 +1,4 @@
+﻿Function_Name,Endpoint,Model,Description
+Policy_Data_Extraction,https://api.openai.com/v1/chat/completions,gpt-4-turbo,A function to extract unstructured insurance policy data from insurance documents.
+COI_Data_Extraction,https://api.openai.com/v1/chat/completions,gpt-4-turbo,A function to extract unstructured Certificate of Insurance Information data from COI documents.
+Invoice_Data_Extraction,https://api.openai.com/v1/chat/completions,gpt-4-turbo,A function to extract unstructured Invoice data points from Invoice documents.

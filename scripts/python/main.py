@@ -11,8 +11,8 @@ import csv
 base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Construct relative paths for the CSV files
-file_path_functions = os.path.join(base_dir, 'GPT Functions', 'GPT_Functions.csv')
-file_path_parameters = os.path.join(base_dir, 'GPT Functions', 'GPT_Function_Parameters.csv')
+file_path_functions = os.path.join(base_dir, 'GPT_Functions', 'GPT_Functions.csv')
+file_path_parameters = os.path.join(base_dir, 'GPT_Functions', 'GPT_Function_Parameters.csv')
 
 # Load the CSV files
 df_functions = pd.read_csv(file_path_functions)
